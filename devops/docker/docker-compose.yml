@@ -1,0 +1,30 @@
+services:
+  mariadb:
+    container_name: mariadb
+    ports:
+      - 3306:3306
+    image: mariadb:latest
+    environment:
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
+      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+    volumes:
+      - ./mariadb/data/:/var/lib/mysql
+      - ./mariadb/mariadb.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+    mem_limit: 2g        # 메모리 제한 (2GB)
+    cpus: 2.0           # CPU 할당 (2 CPU 코어)
+
+  activemq:
+    image: rmohr/activemq:latest
+    container_name: activemq
+    ports:
+      - "61616:61616" # ActiveMQ TCP 포트
+      - "8161:8161"   # ActiveMQ 웹 콘솔 포트
+    environment:
+      - ACTIVEMQ_ADMIN_LOGIN=${ACTIVEMQ_ADMIN_LOGIN}
+      - ACTIVEMQ_ADMIN_PASSWORD=${ACTIVEMQ_ADMIN_PASSWORD}
+      - ACTIVEMQ_MIN_MEMORY=${ACTIVEMQ_MIN_MEMORY} # 최소 512MB
+      - ACTIVEMQ_MAX_MEMORY=${ACTIVEMQ_MAX_MEMORY} # 최대 1GB
+    volumes:
+      - ./activemq/data/:/opt/apache-activemq-5.15.6/data/
+      - ./activemq/logs/:/var/log/activemq/
+      - ./activemq/conf/activemq.xml:/opt/apache-activemq-5.15.6/conf/activemq.xml

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.1</version>
+		<relativePath/>
+	</parent>
+
+	<groupId>com.fornet</groupId>
+	<artifactId>test2</artifactId>
+	<version>0.0.1</version>
+
+	<packaging>war</packaging>	<!-- jsp까지 같이 빌드 해야 되기 때문에 war -->
+	<name>test2</name>
+	<description>test2 project for Spring Boot</description>
+
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.fornet</groupId>
+			<artifactId>amqh</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!--		&lt;!&ndash; ActiveMQ Starter &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-activemq</artifactId>-->
+<!--		</dependency>-->
+
+		<!-- spring boot web : 웹 애플리케이션을 구축할 때 필요한 기본 의존성 내장된 Tomcat 서버(web)와 RESTful API(mvc) 포함-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- spring boot tomcat : 애플리케이션을 Tomcat 서버에 배포하는 의존성 / provided 스코프로 Tomcat은 이미 외부에서 제공되는 서버라는 의미 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- spring boot test : 테스트를 작성할 수 있도록 도와주는 라이브러리 / JUnit, Hamcrest, Mockito 등을 포함-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<!-- [ JSP ]-->
+		<!-- servlet api : 서블릿은 서버에서 클라이언트의 요청을 처리하는 Java 클래스로 이 의존성은 servlet을 작성하는데 필요한 기본 api-->
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- jsp tomcat : Tomcat에서 JSP(Java Server Pages)를 지원하도록 하는 라이브러리 / JSP를 사용해 동적인 HTML 페이지를 렌더링 가능-->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		<!-- jsp jstl : JSP 페이지에서 사용할 수 있는 표준 태그 라이브러리로 JSP에서 반복문, 조건문 등 사용 -->
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+		</dependency>
+
+		<!-- [ HELP ] -->
+		<!-- lombok : Java에서 반복적인 코드를 줄여주는 라이브러리-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- spring boot devtools : 개발 중에 편리한 자동 재시작, 핫스왑 등 개발 편의 기능을 제공하는 라이브러리 / 런타임 환경에서만 동작 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Spring Boot Maven Plugin + Lombok -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
