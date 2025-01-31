@@ -8,13 +8,13 @@
     <img  style="width: 50%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkikDKbRDhuUVOtQxg5m-A5et65Hla8WD8og&s">
 </div>
 
-<!-- 홈페이지 링크 -->
+<!-- 홈페이지 링크
 <div align=center>
     <h3>
         🌐 시연영상
         <a href="{실행동영상 유튜브 링크}">유튜브링크</a>
     </h3>
-</div>
+</div> -->
 
 <br>
 
@@ -23,10 +23,21 @@
 <details>
 	<summary><b> 프로젝트 소개</b></summary>
     <ul>
+        <b>프로젝트 구조</b>
         <li>
+          activemq - ActiveMQ Broker
         </li>
         <li>
+          amqh - ActiveMQHelper Library
         </li>
+        <li>
+          test - spring boot server 1, 2, 3
+        </li>
+        <b> 요구사항</b>
+        <li>ActiveMQ 로컬 구축 및 Topic/Queue에서 Enqueue/Dequeue 구현 및 테스트</li>
+        <li>ActiveMQ Enqueue, Dequeue 자바로 구현해 라이브러리(jar)로 만들기</li>
+        <li>동적 기능: 메시지 생산자, 소비사 (topic, queue)</li>
+        <li>메시지(Oject) 형식: String mqName, String title, String context</li>
     </ul>
 </details>
 
@@ -36,17 +47,29 @@
 	<summary><b> 프로젝트 실행</b></summary>
 
 ```bash
-# Prerequisites:
-# 실행
-git clone https://github.com/MpqM/{repository}
-# backend
-cd server
-npm install
-npm start
-# frontend
-cd client
-npm install
-npm start
+- activemqtest1, 2, 3
+  - 각 모듈 실행시 Run > Edit Configurations
+  - Run Configuration > working directory
+  - 서브모듈 경로로로 설정
+- activemqhelpber
+  - clean & install
+  - ~/.m2/repository/com/fornet/activemqhelpber/1.0.0/activemqhelpber-1.0.0.jar
+```
+
+```properties
+activemq.broker-url=tcp://localhost:61616 #ActiveMQ 서버 URL
+activemq.username=admin                   #ActiveMQ admin 계정 이름
+activemq.password=admin                   #ActiveMQ admin 계정 비밀번호
+activemq.explicit-qos-enabled=true        #ActiveMQ 전송 품질 QOS 활성화
+activemq.delivery-persistent=true         #ActiveMQ 큐 영속성 활성화(메시지 유실 방지), false면 메시지 유실 허용
+activemq.receive-timeout=3000             #ActiveMQ 메시지 수신 시간 (3초)
+activemq.time-to-live=180000              #ActiveMQ 메시지 유효 시간 (3분)
+activemq.topics=topic1,topic2,topic3      #ActiveMQ topic 이름 리스트
+activemq.queues=queue1,queue2,queue3      #ActiveMQ queue 이름 리스트
+activemq.queueSessionMode=0               #ActiveMQ Queue Session Mode 
+activemq.topicSessionMode=0               #ActiveMQ Topic Session Mode
+activemq.clientId=client1                 #ActiveMQ 클라이언트 ID
+activemq.retransmit=false                 #ActiveMQ 메시지 재전송 여부
 ```
 
 </details>
@@ -56,82 +79,6 @@ npm start
 <details>
 	<summary><b> 주요 기능 설명</b></summary>
     <ul>
-        <b>기능</b>
-        <li>기능1
-        </li>
-        <li>기능 2
-        </li>
-    </ul>
-</details>
-
-<br>
-
-## 💻 기술스택
-
-| **Category** |**Skills**| 
-|-------------|---------|
-|**Language**| ![HTML5](https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white) ![JAVA](https://img.shields.io/badge/java-6DB33F?style=for-the-badge&logo=spring&logoColor=white) ![Python](https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white) |
-|**Frontend**|  ![Handlebars.js](https://img.shields.io/badge/handlebars.js-3776AB?style=for-the-badge&logo=Handlebars.js&logoColor=white) ![Vue.js](https://img.shields.io/badge/vue.js-4FC08D.svg?&style=for-the-badge&logo=vuedotjs&logoColor=white) ![React](https://img.shields.io/badge/react.js-61DAFB?style=for-the-badge&logo=react&logoColor=white) |
-|**Backend**| ![Spring Boot](https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white) ![express](https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white)  |
-| **Database**| ![MariaDB](https://img.shields.io/badge/mariadb-003545?style=for-the-badge&logo=mariadb&logoColor=white) ![MongoDB](https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white)  ![Amazon S3](https://img.shields.io/badge/redis-FF4438?style=for-the-badge&logo=redis&logoColor=white) ![Amazon S3](https://img.shields.io/badge/amazon%20s3-569A31?style=for-the-badge&logo=amazons3&logoColor=white)|
-| **Test**| ![junit5](https://img.shields.io/badge/junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white) ![postman](https://img.shields.io/badge/postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white) ![apachejmeter](https://img.shields.io/badge/jmeter-D22128.svg?style=for-the-badge&logo=apachejmeter&logoColor=white) |
-| **Build**| ![Gradle](https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white) ![npm](https://img.shields.io/badge/npm-D24939?style=for-the-badge&logo=npm&logoColor=white) |
-| **CI/CD**|![Docker](https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/githubactions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white) ![Jenkins](https://img.shields.io/badge/jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white) ![k8s](https://img.shields.io/badge/kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white) ![AWS](https://img.shields.io/badge/amazonec2-FF9900.svg?style=for-the-badge&logo=amazonec2&logoColor=white)|
-| **Monitoring & Infra**| ![Nginx](https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=nginx&logoColor=white) ![ubuntu](https://img.shields.io/badge/ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white) ![prometheus](https://img.shields.io/badge/prometheus-E6522C.svg?style=for-the-badge&logo=prometheus&logoColor=white) ![grafana](https://img.shields.io/badge/grafana-F46800.svg?style=for-the-badge&logo=grafana&logoColor=white) |
-| **Collabo & Tools**| ![GitHub](https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=github&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) ![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white) ![vsc](https://img.shields.io/badge/VisualStudioCode-2F80ED.svg?&style=for-the-badge&logo=VisualStudioCode&logoColor=white) ![intellijidea](https://img.shields.io/badge/intellijidea-000000.svg?&style=for-the-badge&logo=intellijidea&logoColor=white) |
-|**MSA**| ![apachekafka](https://img.shields.io/badge/apachekafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white) ![SpringCloud](https://img.shields.io/badge/SpringCloud-6DB33F?style=for-the-badge&logo=spring&logoColor=white) ![axon](https://img.shields.io/badge/axonframework-FF9900?style=for-the-badge&logo=axonframework&logoColor=white) |
-|**BlockChain**| ![HyperLedgerFabric](https://img.shields.io/badge/HyperLedgerFabric-2496ED?style=for-the-badge&logo=HyperLedgerFabric&logoColor=white) |
-|**Contact**| ![Tistory](https://img.shields.io/badge/tistory-000000?style=for-the-badge&logo=Tistory&logoColor=white) ![Gmail](https://img.shields.io/badge/okqkrwhdtjd@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white) ![NAVER](https://img.shields.io/badge/okqkrwhdtjd@naver.com-03C75A?style=for-the-badge&logo=naver&logoColor=white) 
-
-<br>
-
-- - -
-
-<br>
-
-### 프로젝트 개요
-- 
-- 이름 
-- 기간: 2025/01/13 ~ 2025/01/16
-- 개발: 박종성
-
-### 프로젝트 구조
-- activemq - ActiveMQ Broker
-- AMQH - ActiveMQHelper Library
-- test1 - spring boot server 1 (일반 라이브러리 사용)
-- test2 - spring boot server 2 (AMQH 라이브러리 사용)
-- test3 - spring boot server 3
-
-### 요구사항
-- ActiveMQ 로컬 구축 및 Topic/Queue에서 Enqueue/Dequeue 구현 및 테스트
-- ActiveMQ Enqueue, Dequeue 자바로 구현해 라이브러리(jar)로 만들기
-- 동적 기능 : 메시지 생산자, 소비사 (topic, queue)
-- 메시지(Oject) 형식 : String mqName, String title, String context
-
-### 프로젝트 실행
-- activemqtest1, 2 실행
-  - 각 모듈 실행시 Run > Edit Configurations
-  - Run Configuration > working directory
-  - 서브모듈 경로로로 설정
-- activemqhelpber
-  - clean & install
-  - ~/.m2/repository/com/fornet/activemqhelpber/1.0.0/activemqhelpber-1.0.0.jar
-- application.properties 파일
-```properties
-activemq.broker-url=tcp://localhost:61616  #ActiveMQ 서버 URL
-activemq.username=admin                    #ActiveMQ admin 계정 이름
-activemq.password=admin                    #ActiveMQ admin 계정 비밀번호
-activemq.explicit-qos-enabled=true         #ActiveMQ 전송 품질 QOS 활성화
-activemq.delivery-persistent=true          #ActiveMQ 큐 영속성 활성화(메시지 유실 방지), false면 메시지 유실 허용
-activemq.receive-timeout=3000              #ActiveMQ 메시지 수신 시간 (3초)
-activemq.time-to-live=180000               #ActiveMQ 메시지 유효 시간 (3분)
-activemq.topics=topic1,topic2,topic3       #ActiveMQ topic 이름 리스트
-activemq.queues=queue1,queue2,queue3       #ActiveMQ queue 이름 리스트
-activemq.queueSessionMode=0                #ActiveMQ Queue Session Mode 
-activemq.topicSessionMode=0                #ActiveMQ Topic Session Mode
-activemq.clientId=client1                  #ActiveMQ 클라이언트 ID
-activemq.retransmit=false                  #ActiveMQ 메시지 재전송 여부
-```
 
 ### ActiveMQ 개념 
 - queue
@@ -191,7 +138,7 @@ activemq.retransmit=false                  #ActiveMQ 메시지 재전송 여부
 - INDIVIDUAL_ACKNOWLEDGE: 4 / ActiveMQ 전용 확장 모드로 개별 메시지 단위로 ACK 가능. message.acknowledge()를 호출하면 해당 메시지만 ACK
 
 ### 메시지 재처리 방법
-_- producer & broker
+- producer & broker
   - Producer에서 DeliveryMode.PERSISTENT 설정하면 브로커가 메시지를 저장함
   - ActiveMQ 설정에서 persistenceAdapter 활성화 필요
 - queue
@@ -205,3 +152,17 @@ _- producer & broker
 - Redelivery Policy(메시지 재전송 정책 설정)
   - SESSION_TRANSACTED 및 CLIENT_ACKNOWLEDGE를 사용하면 Redelivery Policy와 함께 활용 가능
   - ActiveMQ 설정에서 Redelivery Policy 적용 가능 (maximumRedeliveries, backOffMultiplier 설정 등)
+
+    </ul>
+</details>
+
+<br>
+
+## 💻 기술스택
+
+| **Category** |**Skills**| 
+|-------------|---------|
+|**Language**| ![JAVA](https://img.shields.io/badge/java-6DB33F?style=for-the-badge&logo=spring&logoColor=white) 
+|**Backend**| ![Spring Boot](https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+
+
