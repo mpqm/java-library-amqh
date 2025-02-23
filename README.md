@@ -23,7 +23,7 @@
 - 요구사항
   - ActiveMQ 로컬 구축 및 Topic/Queue에서 Enqueue/Dequeue 구현 및 테스트</li>
   - ActiveMQ Enqueue, Dequeue 자바로 구현해 라이브러리(jar)로 만들기</li>
-  - 동적 기능: 메시지 생산자, 소비사 (topic, queue)</li>
+  - 동적 기능: 소비자는 한개의 토픽 및 큐만 구독 -> 여러개의 토픽 및 큐리스트로 구독</li>
   - 메시지(Oject) 형식: String mqName, String title, String context</li>
     </ul>
 </details>
