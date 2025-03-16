@@ -41,7 +41,7 @@
   - 서브모듈 경로로로 설정
 - activemqhelpber
   - clean & install
-  - ~/.m2/repository/com/fornet/activemqhelpber/1.0.0/activemqhelpber-1.0.0.jar
+  - ~/.m2/repository/com/library/amqh/1.0.0/amqh-1.0.0.jar
 ```
 
 ```properties

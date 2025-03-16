@@ -11,7 +11,7 @@
 		<relativePath/>
 	</parent>
 
-	<groupId>com.</groupId>
+	<groupId>com.amqh</groupId>
 	<artifactId>test1</artifactId>
 	<version>0.0.1</version>
 
@@ -26,7 +26,7 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.library</groupId>
+			<groupId>com.amqh</groupId>
 			<artifactId>amqh</artifactId>
 			<version>1.0.0</version>
 		</dependency>
