@@ -1,4 +1,4 @@
-# ActiveMQHelper(AMQH)
+# ActiveMQHelper
 <div align="center">
     <img  style="width: 50%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkikDKbRDhuUVOtQxg5m-A5et65Hla8WD8og&s">
 </div>
@@ -16,7 +16,7 @@
 <summary><b> 📌 프로젝트 개요</b></summary>
 <br>
 
-- 프로젝트 구조</b>
+- 프로젝트 구조
   - activemq - ActiveMQ Broker
   - amqh - ActiveMQHelper Library
   - test - spring boot server 1, 2, 3
@@ -25,13 +25,13 @@
   - ActiveMQ Enqueue, Dequeue 자바로 구현해 라이브러리(jar)로 만들기</li>
   - 동적 기능: 소비자는 한개의 토픽 및 큐만 구독 -> 여러개의 토픽 및 큐리스트로 구독</li>
   - 메시지(Oject) 형식: String mqName, String title, String context</li>
-    </ul>
+
 </details>
 
 <br>
 
 <details>
-<summary><b> 🏃프로젝트 실행</b></summary>
+<summary><b> 🏃 프로젝트 실행</b></summary>
 <br>
 
 ```bash
@@ -99,7 +99,7 @@ activemq.retransmit=false                 #ActiveMQ 메시지 재전송 여부
   - _typeId: MappingJackson2MessageConverter에서 _typeId를 사용해 JSON 메시지를 특정 클래스로 변환
 
 - Message ID 구조
-  - ID:<hostname>-<connectionID>-<sessionID>:<producerID>:<sequenceID>:<batchID>:<attemptID>
+  - ID:`<hostname>-<connectionID>-<sessionID>:<producerID>:<sequenceID>:<batchID>:<attemptID>`
   - ID Prefix: 메시지 ID의 시작을 나타내는 고정된 접두사 
   - Hostname:  메시지를 생성한 클라이언트가 실행 중인 호스트 이름 또는 브로커 ID / 클러스터 환경에서 메시지 추적 
   - Connection ID: 브로커와 클라이언트 간의 특정 연결을 식별하는 ID / 각 연결은 고유한 ID를 가짐 
@@ -141,18 +141,17 @@ activemq.retransmit=false                 #ActiveMQ 메시지 재전송 여부
     - SESSION_TRANSACTED 및 CLIENT_ACKNOWLEDGE를 사용하면 Redelivery Policy와 함께 활용 가능
     - ActiveMQ 설정에서 Redelivery Policy 적용 가능 (maximumRedeliveries, backOffMultiplier 설정 등)
 
-    </ul>
 </details>
 
 <br>
 
 <details>
-<summary><b> 💻 기술 스택</b></summary>
+<summary><b> 🎮 기술 스택</b></summary>
 <br>
 
-| **Category** |**Skills**| 
-|-------------|---------|
-|**Language**| ![JAVA](https://img.shields.io/badge/java-6DB33F?style=for-the-badge&logo=spring&logoColor=white) 
-|**Backend**| ![Spring Boot](https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+| **CATEGORY**         | **SKILLS**                                                                                                         | 
+|----------------------|--------------------------------------------------------------------------------------------------------------------|
+| **LANGUAGE** | ![JAVA](https://img.shields.io/badge/java-6DB33F?style=for-the-badge&logo=spring&logoColor=white)                  
+| **TEST**             | ![Spring Boot](https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white) |
 
 </details>

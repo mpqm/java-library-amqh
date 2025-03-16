@@ -11,7 +11,7 @@
 		<relativePath/>
 	</parent>
 
-	<groupId>com.fornet</groupId>
+	<groupId>com.library</groupId>
 	<artifactId>test3</artifactId>
 	<version>0.0.1</version>
 
@@ -25,7 +25,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.fornet</groupId>
+			<groupId>com.library</groupId>
 			<artifactId>amqh</artifactId>
 			<version>1.0.0</version>
 		</dependency>
