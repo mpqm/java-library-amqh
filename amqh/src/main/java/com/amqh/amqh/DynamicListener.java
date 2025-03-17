@@ -41,8 +41,6 @@ public class DynamicListener {
     private final Boolean retransmit;
 
     // 생성자
-
-
     public DynamicListener(ConnectionFactory connectionFactory, List<String> queues, List<String> topics, Integer queueSessionMode, Integer topicSessionMode, String clientId, Boolean retransmit) {
         this.connectionFactory = connectionFactory;
         this.queues = queues;

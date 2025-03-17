@@ -1,0 +1,12 @@
+services:
+  activemq:
+    image: rmohr/activemq:latest
+    container_name: activemq
+    ports:
+      - "61616:61616" # ActiveMQ TCP 포트
+      - "8161:8161"   # ActiveMQ 웹 콘솔 포트
+    environment:
+      - ACTIVEMQ_ADMIN_LOGIN=admin
+      - ACTIVEMQ_ADMIN_PASSWORD=admin
+      - ACTIVEMQ_MIN_MEMORY=512 # 최소 512MB
+      - ACTIVEMQ_MAX_MEMORY=-1024 # 최대 1GB
