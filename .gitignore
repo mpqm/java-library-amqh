@@ -1,4 +1,4 @@
-infra/docker/activemq/
+meta/infra/docker/activemq/
 
 target/
 !.mvn/wrapper/maven-wrapper.jar
