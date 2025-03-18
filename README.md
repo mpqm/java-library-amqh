@@ -135,7 +135,7 @@ services:
         - _typeId: MappingJackson2MessageConverter에서 _typeId를 사용해 JSON 메시지를 특정 클래스로 변환
 
     - Message ID 구조
-        - ID:--::::
+        - `<hostname>-<connectionID>-<sessionID>:<producerID>:<sequenceID>:<batchID>:<attemptID>`
         - ID Prefix: 메시지 ID의 시작을 나타내는 고정된 접두사
         - hostname: 메시지를 생성한 클라이언트가 실행 중인 호스트 이름 또는 브로커 ID / 클러스터 환경에서 메시지 추적
         - Connection ID: 브로커와 클라이언트 간의 특정 연결을 식별하는 ID / 각 연결은 고유한 ID를 가짐
@@ -182,7 +182,7 @@ services:
 <br>
 
 <details>
-<summary><b> 🎮 프로젝트 기술</b></summary>
+<summary><b> 🎮 프로젝트 스택</b></summary>
 <br>
 
 | **CATEGORY**         | **SKILLS**                                                                                                         | 
