@@ -67,14 +67,14 @@ activemq.retransmit=false                 #ActiveMQ 메시지 재전송 여부
         - 동기적 처리, 비 실시간성
         - 메시지를 보내는 쪽과 받는 쪽이 1:1로 연결되어 있는 방식
         <div align="center">
-            <img src="./meta/image1.png">
+            <img src="./meta/image/image1.png">
         </div>
     - Topic
         - 비동기적 처리, 실시간성
         - 메시지를 보내는 쪽과 받는 쪽이 1:N으로 연결되어 있는 방식
         - 지원하는 receive() 메서드는 동기적인 방식으로 메시지를 받으므로 사용못함
         <div align="center">
-            <img src="./meta/image2.png">
+            <img src="./meta/image/image2.png">
         </div>
     - Virtual Topic
         - virtualTopic은 여러개의 큐에 메시지를 전달하는 방식
@@ -83,7 +83,7 @@ activemq.retransmit=false                 #ActiveMQ 메시지 재전송 여부
         - 소비자는 큐 template으로 토픽 destination에 있는 메시지를 수신
         - 만약 virtualTopic을 queue로 구독중인 경우 topic 처럼 동작
         <div align="center">
-            <img src="./meta/image3.png">
+            <img src="./meta/image/image3.png">
         </div>
     - 메시지 재처리 방법
         - producer & broker
@@ -155,25 +155,25 @@ services:
 - ActiveMQ 실행
   - VirtualTopic
     <div align="center">
-        <img src="./meta/image4.png">
+        <img src="./meta/image/image4.png">
     </div>
 - Queues
   - test1 -> queue1, queue2 (send)
     <div align="center">
-        <img src="./meta/image5.png">
+        <img src="./meta/image/image5.png">
     </div>
   - test3 -> queue1, queue2 (receive)
     <div align="center">
-        <img src="./meta/image6.png">
+        <img src="./meta/image/image6.png">
     </div>
 - Topics
   - test1 -> topic1, topic2 (send)
     <div align="center">
-        <img src="./meta/image7.png">
+        <img src="./meta/image/image7.png">
     </div>
   - test2 -> topic1, topic2 (receive)
     <div align="center">
-        <img src="./meta/image8.png">
+        <img src="./meta/image/image8.png">
     </div>
 - 동적 컨슈머 구현: https://mpqm.tistory.com/218
 
