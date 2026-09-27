@@ -1,4 +1,4 @@
-# ActiveMQHelper
+# AMQH
 <div align="center">
     <img  style="width: 50%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkikDKbRDhuUVOtQxg5m-A5et65Hla8WD8og&s">
 </div>
